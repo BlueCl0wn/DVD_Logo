@@ -15,7 +15,7 @@ x = randint(0, sizex - width)
 y = randint(0, sizey - height)
 direction = 1
 
-rgb = (randint(0,255), randint(0,255), randint(0,255))
+rgb = (randint(0, 255), randint(0, 255), randint(0, 255))
 pygame.draw.rect(win, rgb, (x, y, width, height))
 
 run = 1
@@ -25,32 +25,30 @@ while run:
         if event.type == pygame.QUIT:
             run = 0
 
-    if y < 0: # obere Border // nur wenn direction == 3 oder 4
-        rgb = (randint(0,255), randint(0,255), randint(0,255))
+    if y < 0:  # obere Border // nur wenn direction == 3 oder 4
+        rgb = (randint(0, 255), randint(0, 255), randint(0, 255))
         if direction == 3:
             direction = 2
         elif direction == 4:
             direction = 1
-    elif x > sizex-width: # rechte Border //nur wenn direction == 1 oder 4
-        rgb = (randint(0,255), randint(0,255), randint(0,255))
+    elif x > sizex - width:  # rechte Border //nur wenn direction == 1 oder 4
+        rgb = (randint(0, 255), randint(0, 255), randint(0, 255))
         if direction == 1:
             direction = 2
         elif direction == 4:
             direction = 3
-    elif y > sizey-height: # untere Border // nur wenn direction == 1 oder 2
-        rgb = (randint(0,255), randint(0,255), randint(0,255))
+    elif y > sizey - height:  # untere Border // nur wenn direction == 1 oder 2
+        rgb = (randint(0, 255), randint(0, 255), randint(0, 255))
         if direction == 1:
             direction = 4
         elif direction == 2:
             direction = 3
-    elif x < 0: # linke Border // nur wenn direction == 2 oder 3
-        rgb = (randint(0,255), randint(0,255), randint(0,255))
+    elif x < 0:  # linke Border // nur wenn direction == 2 oder 3
+        rgb = (randint(0, 255), randint(0, 255), randint(0, 255))
         if direction == 2:
             direction = 1
         elif direction == 3:
             direction = 4
-        direction = 4
-
 
     if direction == 1:
         x += vel
